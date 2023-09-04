@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBrain : MonoBehaviour
+public abstract class EnemyBrain : MonoBehaviour
 {
     [SerializeField] protected Transform _targetTrm;
     protected NavMeshAgent _agent;
@@ -13,6 +13,11 @@ public class EnemyBrain : MonoBehaviour
     protected virtual void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+    }
+
+    protected virtual void Start()
+    {
+        
     }
 
     public void TryToTalk(string text)
